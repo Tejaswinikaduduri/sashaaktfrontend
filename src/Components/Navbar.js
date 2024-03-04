@@ -1,17 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+    const location = useLocation();
+
+    // Check if the current route is the login page
+    const isLoginPage = location.pathname === '/';
+
+    // If the current route is the login page, hide the navbar
+    if (isLoginPage) {
+        return null;
+    }
+
+    // If the current route is not the login page, render the navbar
     return (
-        <header class="header">
-        <a href="#top" class="logo">SASHAKTH</a>
-        <nav class="nav-items">
-          <Link to="/">Home</Link>
-          <Link to="/click">About</Link>
-          <Link to="/go">Contact</Link>
-        </nav>
-      </header>
-      );
+        <div className="navbar">
+            <h1><Link to="/" className="home">SASHAKTH</Link></h1>
+           {/*<Link to="#">Help</Link>*/}
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
+            {/* Update the "Home" link to point to the correct route */}
+            <Link to="/home" className="home">Home</Link>
+        </div>
+    );
 }
  
 export default Navbar;

@@ -1,182 +1,117 @@
 
-.App {
-  text-align: center;
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-y: scroll;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  background-color: skyblue;
+  overflow: hidden;
+  height: 90px;
+  padding: 0 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.navbar h1 {
+  color: black;
+  margin: 0;
+}
+
+.navbar a {
+  float: right;
+  color: black;
+  text-align: right;
+  padding: 25px 10px;
+  text-decoration: none;
+  font-size: 28px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+  background-color: lavender;
+  color: black;
+}
+
+.navbar a.home {
+  float: left;
+  margin-right: 30px;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 90px;
+  text-align: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.content img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: skyblue;
+.text-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
 }
 
-.header .logo {
-  font-size: 25px;
-  font-family: 'Sriracha', cursive;
-  color: #000;
-  text-decoration: none;
-  margin-left: 30px;
-}
-
-.nav-items {
+.cards-container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  background-color:skyblue;
-  margin-right: 20px;
-  font-size: 25px;
+  margin-top: 20px;
 }
 
-.nav-items a {
-  text-decoration: none;
-  color: #000;
-  padding: 35px 20px;
-}
-body {
-  margin: 0;
+.card {
+  width: 150px;
+  cursor: pointer;
+  margin: 10px;
+  text-align: center;
+  position: relative;
+  transition: border-color 0.3s ease-in-out;
   box-sizing: border-box;
 }
-.intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+.card img {
   width: 100%;
-  height: 520px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://res.cloudinary.com/dkhfzpkw2/image/upload/v1700126021/child-right_qoyq8u.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.intro h1 {
-  font-family: sans-serif;
-  font-size: 60px;
-  color: #fff;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.intro p {
-  font-size: 20px;
-  color: #d1d1d1;
-  text-transform: uppercase;
-  margin: 20px 0;
-}
-
-.intro button {
-  background-color: #5edaf0;
-  color: #000;
-  padding: 10px 25px;
-  border: none;
-  border-radius: 5px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4)
-}
-
-.achievements {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 40px 80px;
-}
-
-.achievements .work {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 40px;
-}
-
-.achievements .work i {
-  width: fit-content;
-  font-size: 50px;
-  color: #333333;
-  border-radius: 50%;
-  border: 2px solid #333333;
-  padding: 12px;
-}
-
-.achievements .work .work-heading {
-  font-size: 20px;
-  color: #333333;
-  text-transform: uppercase;
-  margin: 10px 0;
-}
-
-.achievements .work .work-text {
-  font-size: 15px;
-  color: #585858;
-  margin: 10px 0;
-}
-
-.AIM-OF-PROJECT {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 80px;
-  border-top: 2px solid #eeeeee;
-}
-
-.AIM-OF-PROJECT img {
-  width: 500px;
-  max-width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
 }
 
-.AIM-OF-PROJECT-text h2 {
-  font-size: 30px;
-  color: #333333;
-  text-transform: uppercase;
-  margin: 0;
+.card:hover {
+  border-color: lavender;
 }
 
-.AIM-OF-PROJECT-text p {
-  font-size: 15px;
-  color: #585858;
-  margin: 10px 0;
+.scrollable-content {
+  overflow-y: scroll;
+  height: calc(100vh - 90px);
 }
 
-/* CSS for footer */
 .footer {
   display: flex;
   justify-content: space-between;
@@ -234,233 +169,6 @@ button {
   margin-top: 10px;
 }
 
-.container1 { 
-  display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
-  min-height: 100vh; 
-  background-image: url("https://res.cloudinary.com/dkhfzpkw2/image/upload/v1703780327/multi-ethnic-paper-dolls-with-different-colored-hair-holding-hands-and-surrounding-our_vcndfa.jpg");
-  background-attachment:fixed;
-  } 
-.vq1{
-  color: #050100;
-  font-weight: 900;
-}
-  
-.word-container1 { 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  margin-bottom: 50px; 
-  } 
-.letter { 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  width: 60px; 
-  height: 60px; 
-  margin: 0 5px; 
-  border-radius: 50%; 
-  font-size: 24px; 
-  font-weight: bold; 
-  color: #fff; 
-  background-color: #333; 
-  opacity: 1; 
-  transition: opacity 0.2s ease-in-out; 
-  } 
-  
-.letter.visible { 
-  opacity: 1; 
-  } 
-  
-.button1-section { 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  } 
-  
-.guess-section { 
-  margin-bottom: 30px; 
-  } 
-  
-.restart-button1, 
-.remove-button1{ 
-  padding: 12px 20px; 
-  margin-right: 10px; 
-  font-size: 16px; 
-  font-weight: bold; 
-  color: #fff; 
-  background-color: #f44336; 
-  border: none; 
-  border-radius: 4px; 
-  cursor: pointer; 
-  transition: background-color 0.2s ease-in-out; 
-  } 
-  
-.remove-button1:disabled { 
-  background-color: #ccc; 
-  cursor: not-allowed; 
-  } 
-  
-.restart-button1:hover, 
-.remove-button1:hover { 
-  background-color: #d32f2f; 
-  } 
-  
-.restart-button1:focus, 
-.remove-button1:focus { 
-  outline: none; 
-  } 
-  
-.letter-selection { 
-  display: flex; 
-  flex-wrap: wrap; 
-  justify-content: center; 
-  margin-bottom: 30px; 
-  } 
-  
-.letter-button1 { 
-  padding: 15px 5px; 
-  margin: 3px; 
-  font-size: 20 px; 
-  font-weight: bold; 
-  color: #fff; 
-  background-color: #53036c; 
-  border:#333;
-  border-radius: 4px; 
-  cursor: pointer; 
-  transition: background-color 0.2s ease-in-out; 
-  } 
-  
-.letter-button1.selected { 
-  background-color: rgb(133, 84, 134); 
-  } 
-  
-.letter-button1:disabled { 
-  background-color: rgb(204, 204, 204)ccc; 
-  cursor: not-allowed; 
-  } 
-  
-.hints { 
-  margin-bottom: 20px; 
-  font-size: 20px; 
-  font-weight: bold; 
-  color: #333; 
-  text-align: center;
-  } 
-  
-.hint-button1 { 
-  padding: 12px 20px; 
-  font-size: 16px; 
-  font-weight: bold; 
-  color: #fff; 
-  background-color: #4caf50; 
-  border: none; 
-  border-radius: 4px; 
-  cursor: pointer; 
-  transition: background-color 0.2s ease-in-out; 
-  } 
-  
-.hint-button1:disabled { 
-  background-color: #ccc; 
-  cursor: not-allowed; 
-  } 
-  
-.hint-button1:hover { 
-  background-color: #388e3c; 
-  } 
-  
-.hint-button1:focus { 
-  outline: none; 
-  } 
-  
-.message { 
-  font-size: 20px; 
-  font-weight: bold; 
-  color: #333; 
-  text-align: center; 
-  margin-bottom: 20px; 
-  } 
-  
-.guess-button1 { 
-  padding: 12px 30px; 
-  margin-top: 20px; 
-  font-size: 18px; 
-  font-weight: bold; 
-  color: #fff; 
-  background-color: #ff5722; 
-  border: none; 
-  border-radius: 4px; 
-  cursor: pointer; 
-  transition: background-color 0.2s ease-in-out; 
-  align-items: center;
-  } 
-  
-.guess-button1:disabled { 
-  background-color: #ccc; 
-  cursor: not-allowed; 
-  } 
-  
-.guess-button1:hover { 
-  background-color: #e64a19; 
-  } 
-  
-.guess-button1:focus { 
-  outline: none; 
-  } 
-.word-description { 
-  font-size: 35px; 
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
-  font-style:italic;
-  color: rgb(255, 2, 107); 
-  margin-bottom: 20px; 
-  }
-.green-text {
-  color: green;
-  font-size: 30px;
-}
-
-.blue-text {
-  color: blue;
-  font-size: 30px;
-}
-.score-card {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 20px;
-  border: 2px solid #080707;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  z-index: 999;
-}
-
-.score-card p {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.score-card button {
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display:flow-root;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.score-card button:hover {
-  background-color: #3a613c;
-}
- 
 .fullscreen-video {
   background-image: url("https://res.cloudinary.com/dkhfzpkw2/image/upload/v1703780527/photo-1502086223501-7ea6ecd79368_jtpuhl.jpg");
   background-attachment: fixed;
@@ -470,13 +178,13 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  }
+}
 
 .youtube-container {
   width: 100%;
   height: 100vh;
-  }
-/* Youtubepage.css */
+}
+
 .ytbackground-image {
   background-image: url('https://res.cloudinary.com/dkhfzpkw2/image/upload/v1703780450/happy-childrens-day-children-friendship-globe-childhood-childrens-rights-holiday-vector_izsbvd.jpg'); /* Replace with your image path */
   background-size: cover;
@@ -486,6 +194,543 @@ button {
   align-items: center;
   justify-content: center;
 }
-.card-body{
+
+.card-body {
   background-color: rgb(51, 175, 175);
+}
+
+.pikachu-info {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.pikachu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pikachu-image {
+  width: 100%;
+  max-width: 400px; /* Adjust the maximum width of the image */
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.pikachu-text {
+  text-align: center;
+}
+
+.pikachu-text h1 {
+  color: #f57c00;
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+.pikachu-text p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.additional-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.additional-box {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 1400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.additional-box h2 {
+  color: #f57c00;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.additional-box p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* Adjust the gap as needed */
+}
+
+.image-grid2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; /* Adjust the gap as needed */
+}
+
+.step-content {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.step-content img {
+  width: 250px; /* Adjust the image width */
+  height: auto;
+  margin-right: 20px;
+}
+
+.youtube-video {
+  width: 50%;
+  height: 415px;
+}
+
+@media screen and (max-width: 768px) {
+  .pikachu-content {
+      flex-direction: column;
+  }
+
+  .pikachu-text {
+      text-align: center;
+  }
+
+  .pikachu-image {
+      margin-bottom: 10px;
+  }
+
+  .step-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .step-content img {
+      margin-right: 0;
+      margin-bottom: 10px;
+  }
+
+  .additional-box {
+      width: 300px;
+  }
+
+  .youtube-video {
+      width: 320px;
+      height: 250px;
+  }
+
+  .image-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px; /* Adjust the gap as needed */
+  }
+  
+  .image-grid2 {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px; /* Adjust the gap as needed */
+  }
+}
+
+.activities {
+  text-align: center;
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  text-decoration: none;
+  color: #333;
+  margin: 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+  background-color: #f9f9f9;
+  font-size: 24px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap');
+
+.app9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: black;
+}
+
+.score-board9 {
+  background-color: #bac007;
+  width: 100%;
+  font-size: 2em;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: 50px;
+}
+
+/*  style for the game section */
+
+.game9 {
+  width: 500px;
+  /* Set the width of the game container to 500px */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.game9 img {
+  width: calc(12.5% - 10px);
+  /* Adjust width to fit 8 candies per row */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  transition: transform 0.3s ease-in-out;
+  margin: 5px;
+  /* Increase margin to match width adjustment */
+}
+
+
+.game9 img:hover {
+  box-shadow: 0px 3px 6px gold;
+  transform: scale(1.1);
+}
+
+
+/* Set variables for colors */
+:root {
+  --primary-color: black;
+  --secondary-color: yellow;
+  --body-font: 'Roboto', sans-serif;
+}
+
+/* Style the body */
+
+/* Style the header */
+.header9 {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+}
+
+/* Style the logo */
+.logo9 img {
+  height: 30px;
+  border-radius: 50%;
+
+}
+
+/* Style the mute button */
+.icon9 {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.icon9 img {
+  height: 20px;
+  margin-right: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* Style the main content */
+.main-body9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 1rem;
+  font-family: var(--body-font);
+  background-color: var(--primary-color);
+}
+
+.content9 {
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Style the banner */
+.banner9 {
+  font-size: 15rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  padding: 2rem;
+  font-family: 'Passion One', cursive;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px yellow;
+  animation-name: shadow-pulse;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  position: relative;
+}
+
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 10px yellow;
+  }
+
+  50% {
+    box-shadow: 0 0 20px yellow;
+  }
+
+  100% {
+    box-shadow: 0 0 10px yellow;
+  }
+}
+
+
+/* Style the motto */
+.motto9 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--secondary-color);
+  text-shadow: 0 0 5px yellow;
+  position: relative;
+}
+
+/* Style the start game button */
+.start-game9 {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+  margin: 10px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.start-game9:hover {
+  transform: scale(1.05);
+}
+
+/* Style the candy crush image */
+.candy-crush-image9 {
+  width: 400px;
+  margin: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 4.5rem;
+}
+
+.candy-crush-image19 {
+  width: 400px;
+  margin: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 4.5rem;
+}
+
+.candy9-button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 2px;
+  border-radius: 4.5rem;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-right: 800px;
+}
+
+.candy19-button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 2px;
+  border-radius: 4.5rem;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-left: 800px;
+  position: relative;
+  bottom: 450px;
+}
+
+.candy9-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.candy19-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+
+/* Style the footer */
+.footer9 {
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.about9 {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #000000;
+  height: 750px;
+}
+
+.about9-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: black;
+  padding: 1rem;
+  margin: 50px;
+  margin-bottom: 2rem;
+}
+
+.about9-body {
+
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: black;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 50%;
+}
+
+/* Add these styles to your CSS file */
+.home-about {
+  display: flex;
+  justify-content: flex-end;
+  /* Adjust alignment to the right */
+  margin-top: 20px;
+  /* Add margin-top as needed */
+}
+
+.candy1 {
+  width: 100px;
+  /* Adjust the width of the image */
+  height: 100px;
+  /* Adjust the height of the image */
+  border-radius: 50%;
+  position: absolute;
+  left: 60px;
+  top: 80px;
+}
+
+.candy2 {
+  width: 100px;
+  /* Adjust the width of the image */
+  height: 100px;
+  /* Adjust the height of the image */
+  border-radius: 50%;
+  position: absolute;
+  right: 60px;
+  top: 80px;
+}
+
+.candy3 {
+  width: 80px;
+  /* Adjust the width of the image */
+  height: 80px;
+  /* Adjust the height of the image */
+  border-radius: 50%;
+  position: absolute;
+  left: 100px;
+  top: 65px;
+}
+
+.candy4 {
+  width: 80px;
+  /* Adjust the width of the image */
+  height: 80px;
+  /* Adjust the height of the image */
+  border-radius: 50%;
+  position: absolute;
+  right: 100px;
+  top: 65px;
+}
+
+.about-instructions h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.about-instructions h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2e1797;
+}
+
+.about-instructions p {
+  font-size: 18px;
+  font-family: cursive;
+  text-transform: none;
 }

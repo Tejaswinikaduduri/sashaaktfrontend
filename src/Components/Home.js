@@ -1,55 +1,76 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-    return ( 
-        <main>
-    <div class="intro">
-      <h1>SASHAKTH</h1>
-      <p>App for child empowerment.</p>
-     
-    </div>
-    <div class="achievements">
-      <div class="work">
-        <Link to="/stories" className="work-heading"> 
-        <i class="fas fa-atom"></i><b>STORIES.</b>
-        
-    
-      </Link>
-        
-        <p class="work-text">Stories make learning effective, and that is why children engage so well with storytelling..</p>
-      </div>
-      <div class="work">
-        <Link to ="/play" className="work-heading">
-        <i class="fas fa-skiing"></i>
-        <i class="work-heading"></i><b>GAMES.</b>
-        </Link>
-        <p class="work-text">Games helps in enhancing mental health of children.</p>
-      </div>
-      
-      <div class="work">
-        <Link to="/see" className="work-heading">
-        <i class="fas fa-ethernet"></i>
-        <i class="work-heading"></i><b>MULTIMEDIA VISUALS.</b>
-        </Link>
-        <p class="work-text">Mutlimedia visuals helps grasping things easily .</p>
+  return (
+    <div className="content scrollable-content">
+      <div
+        className="image-container"
+        style={{ position: "relative" }}
+      >
+        <img
+          src="https://res.cloudinary.com/dkhfzpkw2/image/upload/v1699902205/9c1d402e-ed9e-49e3-874b-dd86d5500408-f33c93f671fd.small_ktvmgc.jpg"
+          alt="Your Description"
+          style={{ height: "400px", objectFit: "cover", width: "100%" }}
+        />
+        <div
+          className="text-overlay"
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            bottom: "20%",
+            transform: "translate(-50%, -50%)",
+            textAlign: "center",
+            color: "white",
+            padding: "10px",
+            margin: "0",
+          }}
+        >
+          <h1>SASHAKTH</h1>
+          <p>Child Empowerment App</p>
+        </div>
       </div>
 
-     
-     
-    </div>
-    <div class="AIM-OF-PROJECT">
-      <div class="AIM-OF-PROJECT-text">
-        <h2>AIM OF PROJECT.</h2>
-        <p>To create a fun, interactive, and engaging gamified platform that educates children in
-            India about their rights and empowers them to stand up for themselves and others.
-            Target audience: The platform is intended for children between the ages of 8 and 16,
-            and will be designed to be inclusive and accessible to all children regardless of their
-            socio-economic background, gender, or other demographic factors</p>
+      <div className="cards-container">
+        <Link to="/play" className="card">
+          <img
+            src="https://res.cloudinary.com/dkhfzpkw2/image/upload/v1706607162/video-Gamer-1372657643_770x533_ifiimv.jpg"
+            alt="Card 1 "
+          />
+          <div className="text-overlay">GAMES.</div>
+        </Link>
+        <Link to="/stories" className="card">
+          <img
+            src="https://res.cloudinary.com/dkhfzpkw2/image/upload/v1706147280/fall_20park_i13wbe.jpg"
+            alt="Card 2 "
+          />
+          <div className="text-overlay">STORIES.</div>
+        </Link>
+        <Link to="/see" className="card">
+          <img
+            src="https://res.cloudinary.com/dkhfzpkw2/image/upload/v1706147980/child-watching-tv-4007338_cdro2k.jpg"
+            alt="Card 3 "
+          />
+          <div className="text-overlay"> MULTIMEDIA VISUALS.</div>
+        </Link>
+        <Link to="/pin" className="card">
+          <img
+            src="https://res.cloudinary.com/dkhfzpkw2/image/upload/v1706150554/Weekly_Taking-Turns_Hero-e1592411399738_skasiw.jpg"
+            alt="Card 4 "
+          />
+          <div className="text-overlay">ACTIVITIES.</div>
+        </Link>
+        <Link to="/rights" className="card">
+          <img
+            src="https://res.cloudinary.com/dkhfzpkw2/image/upload/v1706150613/rights-scaled_p6svme.jpg"
+            alt="Card 5 "
+          />
+          <div className="text-overlay">CLICK ME.</div>
+        </Link>
       </div>
-      <img src="https://res.cloudinary.com/dkhfzpkw2/image/upload/v1700126261/9rMz4hyW_400x400_njyovq.png" alt="me"/>
     </div>
-  </main>
-     );
-}
- 
+  );
+};
+
 export default Home;

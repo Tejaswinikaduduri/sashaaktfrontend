@@ -1,18 +1,26 @@
 /* Youtubepage.css */
-@media only screen and (max-width: 600px){
-.card {
+@media only screen and (max-width: 600px) {
+  .card {
     border: 1px solid #ddd;
-    padding: 20px;
+    padding: 30px;
     transition: transform 0.3s ease;
+    max-width: none;
+    width: 90%;
+    max-width: 300px;
+    margin: auto;
   }
-  
+
   .card:hover,
   .card.shake {
     transform: scale(1.1);
   }
-  
+
+  .card img {
+    width: 100%; /* Make the image fill the entire space of the card */
+    height: auto; /* Maintain aspect ratio */
+  }
+
   button {
     margin-top: 10px;
   }
-
 }

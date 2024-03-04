@@ -76,7 +76,7 @@ function Participation() {
         <Link to="/part"><button className="try-again-btn" onClick={handleYes}>
             YES
           </button></Link>
-          <Link to="/gamehome"><button className="next-btn">
+          <Link to="/"><button className="next-btn">
             NO
           </button></Link>
         </div>
